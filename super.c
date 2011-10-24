@@ -18,3 +18,18 @@ static struct file_system_type sfs_type = {
 	.mount = sfs_mount,
 	.kill_sb = sfs_kill_sb,
 };
+
+static __init init_sfs(void)
+{
+	return 0;
+}
+
+static void __exit exit_sfs(void)
+{
+}
+
+MODULE_AUTHOR("Zhou Peng");
+MODULE_DESCRIPTION("A Sample File System");
+MODULE_LICENSE("GPL");
+module_init(init_sfs);
+module_exit(exit_sfs);
