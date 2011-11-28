@@ -8,5 +8,5 @@ PWD := $(shell pwd)
 all:
 	$(MAKE) -C ${KERNEL_SOURCE} M=$(PWD) modules
 
-clean :
+clean:
 	$(MAKE) -C ${KERNEL_SOURCE} M=$(PWD) clean

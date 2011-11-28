@@ -7,6 +7,7 @@
 
 #include <linux/fs.h>
 #include <linux/module.h>
+#include <linux/kernel.h>
 
 static struct dentry *sfs_mount(struct file_system_type *fs_type,
 					int flags, const char *dev_name, void *data);
@@ -21,11 +22,13 @@ static struct file_system_type sfs_type = {
 
 static __init init_sfs(void)
 {
+	printk(KERN_INFO "init sfs ...\n");
 	return 0;
 }
 
 static void __exit exit_sfs(void)
 {
+	printk(KERN_ALERT "exit sfs!\n");
 }
 
 MODULE_AUTHOR("Zhou Peng");
